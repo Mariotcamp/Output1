@@ -1,0 +1,23 @@
+.flex {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.pad-md {
+  padding: 30px;
+}
+
+main {
+  .result {
+    &__inner {
+      height: auto;
+    }
+    &__picture {
+      flex-basis: 47%;
+      margin-bottom: 0;
+    }
+    &__content {
+      flex-basis: 47%;
+    }
+  }
+}

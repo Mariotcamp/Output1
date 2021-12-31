@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="global-container">
+    <div class="container">
+      <header class="header">
+        <div class="header__inner">
+          <div class="logo">
+            <img src="images/logo.png" alt="surf">
+          </div>
+          <button class="header__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="header__nav">
+            <ul class="header__ul">
+              <li class="header__li">
+                <a href="#">Services</a>
+              </li>
+              <li class="header__li">
+                <a href="#">Services</a>
+              </li>
+              <li class="header__li">
+                <a href="#">Services</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="hero">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/image1.jpeg" class="hero__img">
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image2.jpeg" class="hero__img"> 
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image3.jpeg" class="hero__img">
+            </div>
+          </div>
+          <div class="scroll-text">
+            <span id="scroll">scroll</span>
+            <span id="direction-bar">↓</span>
+          </div>
+        </div>
+      </div>
+      <main>
+        <section class="result">
+          <div class="result__inner">
+            <div class="result__picture"><img src="images/image4.jpeg"></div>
+            <div class="result__content">
+              <span class="result__content__title">
+                これまでの成績（直近1年）
+              </span><br>
+              <span class="result__content__detail">
+                <ul>
+                  <li>ヒメノカップ6位</li>
+                  <li>湘南選手権6位</li>
+                  <li>ドーリムカップ6位</li>
+                  <li>ジャパンカップ6位</li>
+                  <li>関東支部予選6位</li>
+                  <li>インカレ個人戦6位</li>
+                  <li>鎌倉学生選手権32位</li>
+                  <span style="display: block;">etc...</span>
+                  <a href="#">もっと詳しく</a>
+                </ul>
+              </span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

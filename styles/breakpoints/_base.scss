@@ -1,0 +1,228 @@
+//汎用プロパティたち
+
+$cblack: black;
+$cwhite: white;
+$subcolor: #cdfdfd;
+$button-color: #216df7;
+
+body {
+  font-family: 'Kameron', 'Noto Sans JP', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: $cblack;
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.logo {
+  & img {
+    width: 200px;
+  }
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+.pad-md {
+  padding: 10px;
+}
+.main-title {
+  @extend .font-lr;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: block;
+}
+.sub-title {
+  @extend .font-sm;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+//各種スタイル
+.global-container {
+  overflow: hidden;
+}
+
+.header {
+  height: 80px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  @extend .content-width;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    & .logo {
+      & img {
+        margin-top: 6px;
+      }
+    }
+  }
+  &__hamburger {
+    margin-top: 13px;
+    background-color: unset;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    & span {
+      display: block;
+      width: 35px;
+      height: 2px;
+      margin-bottom: 9px;
+      background-color: black;
+    }
+  }
+  &__nav {
+    display: none;
+    line-height: 80px;
+    & ul {
+      & li {
+        display: inline-block;
+        margin-right: 50px;
+        @extend .font-md;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.hero {
+  @extend .mb-lg;
+  & .swiper {
+    width: 100%;
+    height: 500px;
+    overflow: visible;
+    cursor: grab;
+    position: relative;
+    z-index: 0;
+    & .swiper-wrapper {
+      & .swiper-slide {
+        &.swiper-slide-active {
+          & img {
+            @include animation ($name: zoomout, $duration: 1.5s);
+          }
+        }
+      }
+    }
+    & .scroll-text {
+      position: absolute;
+      left: 50%;
+      width: 50px;
+      transform: translateX(-50%);
+      z-index: 10;
+      & span {
+        position: absolute;
+        bottom: 20px;
+        color: $cwhite;
+        font-size: 16px;
+        &:nth-of-type(1) {
+          transform: translateX(-10px) rotate(90deg);
+        }
+        &:nth-of-type(2) {
+          top: -46px;
+          transform-origin: top;
+          @include animation ($name: longer, $duration: 2s, $iteration-count: infinite);
+        }
+      }
+    }
+    & .swiper-slide-shadow-left {
+      background-image: none;
+    }
+    & .swiper-slide-shadow-right {
+      background-image: none;
+    }
+  }
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+main {
+  .result {
+    @extend .content-width;
+    @extend .mb-lg;
+    &__inner {
+      @extend .pad-md;
+      @extend .flex;
+      height: 525px;
+      background-color: $subcolor;
+    }
+    &__picture {
+      height: 300px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      & img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateX(-100%);
+        box-shadow: 0px 0px 3px;
+      }
+      &.inview {
+        & img {
+          @include animation($name: image-zoomout, $duration: 1.5s)
+        }
+      }
+    }
+    &__content {
+      &__title {
+        @extend .main-title;
+      }
+      &__detail {
+        @extend .sub-title;
+        color: #535353;
+        & li {
+          list-style: disc;
+        }
+        & a {
+          background-color: $button-color;
+          color: $cwhite;
+          padding: 10px 20px;
+          margin-top: 5px;
+          position: absolute;
+          transition: all 0.5s;
+          box-shadow: 0 0 7px $button-color;
+          @extend .font-sm;
+          &:hover {
+            background-color: $cwhite;
+            color: $cblack;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+//汎用プロパティ
+.font-sm {
+  font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+.mb-lg {
+  margin-bottom: 150px !important;
+}
+.pb-lg {
+  padding-bottom: 150px !important;
+}
+.pad-md {
+  padding: 60px;
+}
+
+//各種スタイル
+.header {
+  &__hamburger {
+    display: none;
+  }
+  &__nav {
+    display: block;
+  }
+}
+
+.hero {
+  &__img {
+    width: 97%;
+  }
+}
