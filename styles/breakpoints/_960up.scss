@@ -36,3 +36,13 @@
     width: 97%;
   }
 }
+
+main {
+  .best-shot {
+    &__content {
+      & .best-shot__item {
+        width: 32%;
+      }
+    }
+  }
+}
